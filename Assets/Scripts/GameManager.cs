@@ -1,10 +1,9 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    public bool IsPlayerAlive { get; set; } 
+    public bool IsPlayerAlive { get; set; }
 
     [SerializeField] GameObject gameOverPanel;
 
@@ -25,11 +24,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(IsPlayerAlive == false)
+        if (IsPlayerAlive == false)
         {
             Invoke("GameOverPanel", 0.6f);
         }
-
 
         if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {

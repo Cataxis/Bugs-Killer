@@ -2,19 +2,33 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject enemyPrefab; 
+    public GameObject[] enemyPrefabs; 
     public Transform[] spawnPoints; 
+    public float initialSpawnDelay = 2f; 
+    public float spawnRateDecrease = 0.1f;
+    public float minSpawnRate = 0.5f; 
+
+    private float currentSpawnDelay;
 
     private void Start()
     {
-        foreach (Transform spawnPoint in spawnPoints)
-        {
-            SpawnEnemy(spawnPoint.position);
-        }
+        currentSpawnDelay = initialSpawnDelay;
+        Invoke("SpawnEnemy", initialSpawnDelay);
     }
 
-    private void SpawnEnemy(Vector3 spawnPosition)
+    private void SpawnEnemy()
     {
-        Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+        int randomPrefabIndex = Random.Range(0, enemyPrefabs.Length);
+        GameObject enemyPrefab = enemyPrefabs[randomPrefabIndex];
+
+        int randomSpawnIndex = Random.Range(0, spawnPoints.Length);
+        Transform spawnPoint = spawnPoints[randomSpawnIndex];
+
+        Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+
+        currentSpawnDelay -= spawnRateDecrease;
+        currentSpawnDelay = Mathf.Max(currentSpawnDelay, minSpawnRate);
+
+        Invoke("SpawnEnemy", currentSpawnDelay);
     }
 }
