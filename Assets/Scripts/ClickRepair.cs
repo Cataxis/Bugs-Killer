@@ -22,7 +22,7 @@ public class ClickRepair : MonoBehaviour
 
             if (spacePresses >= requiredSpacePresses)
             {
-                Quaternion rotation = Quaternion.Euler(0f, 0f, -90f);
+                Quaternion rotation = Quaternion.Euler(0f, 0f, 90f);
                 GameObject spawnedObject = Instantiate(objectToSpawn, transform.position, rotation);
                 spawnedObject.transform.rotation = rotation;
                 Destroy(gameObject);

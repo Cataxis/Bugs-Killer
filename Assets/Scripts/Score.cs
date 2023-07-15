@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -9,55 +9,62 @@ public class Score : MonoBehaviour
     [SerializeField] TMP_Text finalScoreText;
     [SerializeField] TMP_Text bestScoreText;
 
-    private int score;
-    private int finalScore;
-    private int bestScore;
-    private bool isAnimating = false;
+    float score;
+    float finalScore;
+    float bestScore;
+
+    bool isAnimating;
 
     private void Start()
     {
-        bestScore = PlayerPrefs.GetInt("BestScore", 0);
-        bestScoreText.text = "Best: " + bestScore.ToString();
+        bestScore = PlayerPrefs.GetFloat("BestScore", 0f);
+        bestScoreText.text = "Besto: " + ((int)bestScore).ToString();
     }
 
-    public void UpdateScore()
+    private void Update()
     {
-        score = GameManager.Instance.Score;
-
-        if (score > finalScore && !isAnimating)
+        if (GameManager.Instance.IsPlayerAlive)
         {
-            StartCoroutine(AnimateScore(finalScore, score));
-            finalScore = score;
+            score += 1 * Time.deltaTime;
+            scoreText.text = ((int)score).ToString();
         }
-
-        scoreText.text = "Score: " + score.ToString();
+        else
+        {
+            if (score > finalScore && !isAnimating)
+            {
+                StartCoroutine(AnimateScore(finalScore, score));
+                finalScore = score;
+            }
+        }
     }
 
-    IEnumerator AnimateScore(int startValue, int endValue)
+    IEnumerator AnimateScore(float startValue, float endValue)
     {
         isAnimating = true;
         float currentValue = startValue;
-        float duration = 1f;
+        float duration = 1f; // Duraci�n de la animaci�n en segundos
 
         float timer = 0f;
         while (timer < duration)
         {
             timer += Time.deltaTime;
             currentValue = Mathf.Lerp(startValue, endValue, timer / duration);
-            finalScoreText.text = "Score: " + Mathf.RoundToInt(currentValue).ToString();
+            finalScoreText.text = "Score: " + ((int)currentValue).ToString();
+            bestScoreText.text = "Besto: " + ((int)bestScore).ToString(); // Actualizar el texto de bestScore durante la animaci�n
             yield return null;
         }
 
-        finalScoreText.text = "Score: " + endValue.ToString();
+        finalScoreText.text = "Score: " + ((int)endValue).ToString();
 
         if (endValue > bestScore)
         {
             bestScore = endValue;
-            bestScoreText.text = "Best: " + bestScore.ToString();
-            PlayerPrefs.SetInt("BestScore", bestScore);
+            bestScoreText.text = "Besto: " + ((int)bestScore).ToString();
+            PlayerPrefs.SetFloat("BestScore", bestScore);
         }
 
         isAnimating = false;
     }
 }
+
 

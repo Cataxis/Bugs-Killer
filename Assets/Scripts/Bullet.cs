@@ -25,7 +25,6 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            GameManager.Instance.Score += 1;
             Destroy(collision.gameObject);
             Instantiate(newObjectPrefab, collision.transform.position, Quaternion.identity);
         }

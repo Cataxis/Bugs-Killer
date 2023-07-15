@@ -14,9 +14,6 @@ public class Enemy : MonoBehaviour
             Vector3 direction = player.position - transform.position;
             direction.Normalize();
             transform.position += direction * speed * Time.deltaTime;
-
-            // Camera Shake
-            Camera.main.transform.localPosition = Random.insideUnitSphere * 0.1f;
         }
     }
 
@@ -30,7 +27,7 @@ public class Enemy : MonoBehaviour
             Time.timeScale = .2f;
 
             // Camera Shake
-            StartCoroutine(ShakeCamera(0.2f, 0.1f));
+            StartCoroutine(ShakeCamera(0.4f, 0.4f));
         }
     }
 

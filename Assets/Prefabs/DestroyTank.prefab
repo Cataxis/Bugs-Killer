@@ -4933,7 +4933,7 @@ Transform:
   m_Children:
   - {fileID: 2833232527842956498}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5708868643247141974
 SpriteRenderer:
@@ -5000,8 +5000,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 7833105169863903563, guid: 74e521420154bca4fa08f8f983e346ac, type: 3}
-  minSpacePresses: 5
-  maxSpacePresses: 10
+  minSpacePresses: 3
+  maxSpacePresses: 8
 --- !u!82 &431153334899317089
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5012,7 +5012,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c9daadcf517b6624198b49fae69d6fe8, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

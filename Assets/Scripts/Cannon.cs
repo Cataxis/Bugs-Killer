@@ -6,9 +6,15 @@ public class Cannon : MonoBehaviour
 {
     [SerializeField] Bullet bulletPrefab;
     [SerializeField, Range(1f, 20f)] private float rotationSpeed;
+    [SerializeField, Range(1f, 100f)] private float recoilForce;
+    [SerializeField, Range(0f, 1f)] private float recoilDuration;
     private Camera cam;
     [SerializeField] Transform launcher;
     private Vector2 joystickInput;
+
+    private bool isRecoiling = false;
+    private Vector2 recoilDirection;
+    private float recoilTimer = 0f;
 
     void Start()
     {
@@ -32,11 +38,42 @@ public class Cannon : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
 
-        if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1"))
+        if (isRecoiling)
         {
-            Bullet bulletObj = Instantiate(bulletPrefab, launcher.position, transform.rotation);
-            bulletObj.Launch(transform.up);
+            Recoil();
+        }
+        else
+        {
+            if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1"))
+            {
+                Fire();
+            }
+        }
+    }
+
+    private void Fire()
+    {
+        Bullet bulletObj = Instantiate(bulletPrefab, launcher.position, transform.rotation);
+        bulletObj.Launch(transform.up);
+
+        // Apply recoil
+        recoilDirection = -transform.up;
+        isRecoiling = true;
+        recoilTimer = 0f;
+    }
+
+    private void Recoil()
+    {
+        recoilTimer += Time.deltaTime;
+        if (recoilTimer <= recoilDuration)
+        {
+            float recoilProgress = recoilTimer / recoilDuration;
+            float currentRecoilForce = recoilForce * (1f - recoilProgress);
+            transform.Translate(recoilDirection * currentRecoilForce * Time.deltaTime, Space.World);
+        }
+        else
+        {
+            isRecoiling = false;
         }
     }
 }
-
