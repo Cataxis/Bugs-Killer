@@ -258,8 +258,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1291cae7284736c428392c6b6f731315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 0.4
-  shakeDuration: 1
-  cameraTransform: {fileID: 886919811620166005, guid: f588bdf8020d3a44c9e2146cca8e49ac, type: 3}
   newObjectPrefab: {fileID: 8088608974345519295, guid: b8062c896e1cdf9459c6543ceb4d691e, type: 3}
-  speed: 5
+  speed: 8

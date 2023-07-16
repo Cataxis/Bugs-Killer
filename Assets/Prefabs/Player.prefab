@@ -101,7 +101,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8833087585083121609, guid: abe2b7341d9e1e244a57033d8dc1b00e, type: 3}
   rotationSpeed: 12
   recoilForce: 0
-  recoilDuration: 0.2
+  recoilDuration: 0.1
   launcher: {fileID: 5686983332197067729}
 --- !u!1 &3891270359014183169
 GameObject:
