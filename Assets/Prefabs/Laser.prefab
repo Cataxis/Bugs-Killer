@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1061030522170913425}
   - component: {fileID: 8631047163911763188}
   - component: {fileID: 8833087585083121609}
+  - component: {fileID: 3244456789198746999}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Bullet
@@ -260,3 +261,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newObjectPrefab: {fileID: 8088608974345519295, guid: b8062c896e1cdf9459c6543ceb4d691e, type: 3}
   speed: 8
+--- !u!114 &3244456789198746999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650804305000696757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285fad8089ca40d449b44698155587af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundClip1: {fileID: 8300000, guid: 0d4c8c76287e2bd4fbcc9a3fb7e7ec9f, type: 3}
+  soundClip2: {fileID: 8300000, guid: 1b6793b827c496b46a6d9e07369efa30, type: 3}

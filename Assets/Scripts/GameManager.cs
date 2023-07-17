@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -34,6 +36,11 @@ public class GameManager : MonoBehaviour
         {
             TogglePauseGame();
         }
+
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Joystick1Button6))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+        }
     }
 
     private void TogglePauseGame()
@@ -46,4 +53,5 @@ public class GameManager : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
     }
+
 }
