@@ -158,7 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1651107442654801772, guid: 9c7251de00c26dc4a846e29cd8380fdf, type: 3}
   player: {fileID: 8582928400417236999, guid: 74e521420154bca4fa08f8f983e346ac, type: 3}
-  speed: 1
+  speed: 1.6
 --- !u!50 &4751059214589940483
 Rigidbody2D:
   serializedVersion: 4
