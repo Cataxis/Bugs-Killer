@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7030379958116384595}
   - component: {fileID: 1132644138823057159}
   - component: {fileID: 6342028637807364213}
+  - component: {fileID: -9012526871299618225}
   m_Layer: 0
   m_Name: ScorpioL1
   m_TagString: Enemy
@@ -123,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1651107442654801772, guid: 9c7251de00c26dc4a846e29cd8380fdf, type: 3}
   player: {fileID: 8582928400417236999, guid: 74e521420154bca4fa08f8f983e346ac, type: 3}
-  speed: 1.6
+  speed: 1.2
 --- !u!61 &1132644138823057159
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -196,3 +197,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &-9012526871299618225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8334187970414594151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb454b611e82f34db5d738557563d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDestroy: 15

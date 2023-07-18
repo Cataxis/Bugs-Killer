@@ -27,8 +27,15 @@ public class Bullet : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Instantiate(newObjectPrefab, collision.transform.position, Quaternion.identity);
+            GameManager.Instance.BugDied();
         }
 
-        Destroy(gameObject);
+        if (collision.gameObject.CompareTag("Spikes"))
+        {
+            Debug.Log("ok");
+        }
+
+        Destroy(this.gameObject);
+        
     }
 }

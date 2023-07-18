@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1847680398919694045}
   - component: {fileID: 3731112408230719278}
   - component: {fileID: 3860947010978840645}
+  - component: {fileID: -5284230985135194816}
   m_Layer: 0
   m_Name: SpiderRight
   m_TagString: Enemy
@@ -158,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1651107442654801772, guid: 9c7251de00c26dc4a846e29cd8380fdf, type: 3}
   player: {fileID: 8582928400417236999, guid: 74e521420154bca4fa08f8f983e346ac, type: 3}
-  speed: 1.8
+  speed: 1.6
 --- !u!50 &3860947010978840645
 Rigidbody2D:
   serializedVersion: 4
@@ -186,3 +187,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &-5284230985135194816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6596369047456506777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb454b611e82f34db5d738557563d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDestroy: 15

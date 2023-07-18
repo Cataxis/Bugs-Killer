@@ -5002,6 +5002,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 7833105169863903563, guid: 74e521420154bca4fa08f8f983e346ac, type: 3}
   minSpacePresses: 3
   maxSpacePresses: 8
+  progressBar: {fileID: 8814873078502472311, guid: 548c25980af5d9f40b6e824057d432f0, type: 3}
 --- !u!82 &431153334899317089
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5012,7 +5013,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 490782b509c49654eb116eb1ce2f86ca, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

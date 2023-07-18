@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3115473688519121059}
   - component: {fileID: 7312697392922977300}
   - component: {fileID: 3920385564111205744}
+  - component: {fileID: 3446167394941205461}
   m_Layer: 0
   m_Name: BugRight
   m_TagString: Enemy
@@ -123,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1651107442654801772, guid: 9c7251de00c26dc4a846e29cd8380fdf, type: 3}
   player: {fileID: 8582928400417236999, guid: 74e521420154bca4fa08f8f983e346ac, type: 3}
-  speed: 1.2
+  speed: 1
 --- !u!50 &7312697392922977300
 Rigidbody2D:
   serializedVersion: 4
@@ -196,3 +197,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.565444, y: 3.9364777}
   m_EdgeRadius: 0
+--- !u!114 &3446167394941205461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2392221740688169790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb454b611e82f34db5d738557563d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDestroy: 15
